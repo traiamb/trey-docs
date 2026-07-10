@@ -90,20 +90,19 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   // Relocate previous/next page footer navigation to sit right below the content card
-  const footerInner = document.querySelector(".md-footer__inner");
-  const contentCard = document.querySelector(".trey-content-card");
-  if (footerInner && contentCard) {
-    const inlineFooter = document.createElement("div");
-    inlineFooter.className = "trey-inline-footer";
-    while (footerInner.firstChild) {
-      inlineFooter.appendChild(footerInner.firstChild);
-    }
-    contentCard.parentNode.insertBefore(inlineFooter, contentCard.nextSibling);
-    
-    // Hide main empty footer wrapper
-    const mainFooter = document.querySelector(".md-footer");
-    if (mainFooter) {
-      mainFooter.style.display = "none";
+  function relocateFooter() {
+    const prevLink = document.querySelector(".md-footer__link--prev");
+    const nextLink = document.querySelector(".md-footer__link--next");
+    const contentCard = document.querySelector(".trey-content-card");
+    if ((prevLink || nextLink) && contentCard && !document.querySelector(".trey-inline-footer")) {
+      const inlineFooter = document.createElement("div");
+      inlineFooter.className = "trey-inline-footer";
+      if (prevLink) inlineFooter.appendChild(prevLink.cloneNode(true));
+      if (nextLink) inlineFooter.appendChild(nextLink.cloneNode(true));
+      contentCard.parentNode.insertBefore(inlineFooter, contentCard.nextSibling);
     }
   }
+  relocateFooter();
+  const observer = new MutationObserver(relocateFooter);
+  observer.observe(document.body, { childList: true, subtree: true });
 });

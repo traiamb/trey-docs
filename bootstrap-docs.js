@@ -273,6 +273,84 @@ code, kbd, pre {
   color: #ffffff !important;
 }
 
+/* Custom Search UI overrides - matches image2 */
+.md-search {
+  position: relative !important;
+  width: 200px !important;
+  transition: width 0.25s !important;
+  margin-right: 0.5rem !important;
+}
+.md-search:focus-within {
+  width: 280px !important;
+}
+.md-search__form {
+  background-color: #f1f5f9 !important; /* soft grey-white */
+  border-radius: 0.5rem !important; /* rounded-lg */
+  border: 1px solid #e2e8f0 !important;
+  transition: all 0.2s !important;
+}
+[data-md-color-scheme="slate"] .md-search__form {
+  background-color: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+.md-search__input {
+  color: #0f172a !important;
+  font-size: 0.75rem !important;
+  padding-left: 2rem !important;
+  height: 2rem !important;
+  border-radius: 0.5rem !important;
+}
+[data-md-color-scheme="slate"] .md-search__input {
+  color: #ffffff !important;
+}
+.md-search__input::placeholder {
+  color: #94a3b8 !important;
+  opacity: 1 !important;
+}
+.md-search__icon {
+  color: #94a3b8 !important;
+}
+/* Shortcut badge '/' */
+.md-search__form::after {
+  content: "/" !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 1.1rem !important;
+  height: 1.1rem !important;
+  background-color: #ffffff !important;
+  color: #475569 !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 0.25rem !important;
+  font-family: sans-serif !important;
+  font-size: 0.65rem !important;
+  font-weight: 600 !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
+  position: absolute !important;
+  right: 0.5rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  pointer-events: none !important;
+}
+[data-md-color-scheme="slate"] .md-search__form::after {
+  background-color: #0f172a !important;
+  color: #cbd5e1 !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* GitHub repo source link and Palette toggle overrides */
+.md-source__icon {
+  color: #0f172a !important;
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+}
+[data-md-color-scheme="slate"] .md-source__icon {
+  color: #ffffff !important;
+}
+.md-header__option {
+  margin-left: 0.5rem !important;
+}
+
 /* Navigation tabs styling */
 .md-tabs {
   background-color: #ffffff !important;
@@ -533,7 +611,7 @@ code, kbd, pre {
 }
 
 /* Sidebar navigation styling */
-label[for="__toc"] {
+label[for*="toc"] {
   display: none !important;
 }
 .md-nav__item .md-nav--secondary {
@@ -546,6 +624,24 @@ label[for="__toc"] {
 [data-md-color-scheme="slate"] .md-sidebar--primary {
   background-color: #0b0f19 !important;
   border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+.md-sidebar--primary .md-nav {
+  background-color: #ffffff !important;
+}
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav {
+  background-color: #0b0f19 !important;
+}
+.md-sidebar--primary .md-nav__title {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  font-weight: 700 !important;
+  padding: 1rem 0.6rem !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__title {
+  background-color: #0b0f19 !important;
+  color: #ffffff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 .md-sidebar--secondary {
   background-color: transparent !important;
@@ -708,6 +804,11 @@ p code, li code, table code {
 [data-md-color-scheme="slate"] .highlight .nb { color: #60a5fa !important; }
 [data-md-color-scheme="slate"] .highlight .nf { color: #38bdf8 !important; }
 
+/* Hide original page footer globally */
+.md-footer {
+  display: none !important;
+}
+
 /* Footer previous/next page navigation buttons styling */
 .trey-inline-footer {
   display: flex !important;
@@ -726,7 +827,7 @@ p code, li code, table code {
 .trey-inline-footer .md-footer__link {
   display: flex !important;
   align-items: center !important;
-  gap: 0.5rem !important;
+  gap: 0.2rem !important; /* significantly reduced gap */
   text-decoration: none !important;
   max-width: 48% !important;
   background-color: transparent !important;
@@ -738,7 +839,14 @@ p code, li code, table code {
 .trey-inline-footer .md-footer__link--next {
   margin-left: auto !important;
   text-align: right !important;
-  flex-direction: row-reverse !important;
+  flex-direction: row-reverse !important; /* next icon at suffix */
+}
+.trey-inline-footer .md-footer__link .md-footer__button {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 .trey-inline-footer .md-footer__link:hover {
   background-color: #f1f5f9 !important;
@@ -1144,22 +1252,21 @@ const extraJsContent = `document.addEventListener("DOMContentLoaded", function()
   });
 
   // Relocate previous/next page footer navigation to sit right below the content card
-  const footerInner = document.querySelector(".md-footer__inner");
-  const contentCard = document.querySelector(".trey-content-card");
-  if (footerInner && contentCard) {
-    const inlineFooter = document.createElement("div");
-    inlineFooter.className = "trey-inline-footer";
-    while (footerInner.firstChild) {
-      inlineFooter.appendChild(footerInner.firstChild);
-    }
-    contentCard.parentNode.insertBefore(inlineFooter, contentCard.nextSibling);
-    
-    // Hide main empty footer wrapper
-    const mainFooter = document.querySelector(".md-footer");
-    if (mainFooter) {
-      mainFooter.style.display = "none";
+  function relocateFooter() {
+    const prevLink = document.querySelector(".md-footer__link--prev");
+    const nextLink = document.querySelector(".md-footer__link--next");
+    const contentCard = document.querySelector(".trey-content-card");
+    if ((prevLink || nextLink) && contentCard && !document.querySelector(".trey-inline-footer")) {
+      const inlineFooter = document.createElement("div");
+      inlineFooter.className = "trey-inline-footer";
+      if (prevLink) inlineFooter.appendChild(prevLink.cloneNode(true));
+      if (nextLink) inlineFooter.appendChild(nextLink.cloneNode(true));
+      contentCard.parentNode.insertBefore(inlineFooter, contentCard.nextSibling);
     }
   }
+  relocateFooter();
+  const observer = new MutationObserver(relocateFooter);
+  observer.observe(document.body, { childList: true, subtree: true });
 });`;
 const extraJsPath = path.join(DOCS_DIR, 'javascripts/extra.js');
 ensureDirectoryExistence(extraJsPath);
@@ -1175,6 +1282,8 @@ fs.writeFileSync(logoPath, `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0
 console.log('Creating mkdocs.yml...');
 const mkdocsConfig = `site_name: Trey Documentation
 site_description: Local-first AI engineering operations cockpit.
+repo_url: https://github.com/traiamb/trey-docs
+repo_name: traiamb/trey-docs
 theme:
   name: material
   logo: assets/logo.svg
