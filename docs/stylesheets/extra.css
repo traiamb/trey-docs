@@ -339,6 +339,12 @@ code, kbd, pre {
 }
 
 /* Sidebar navigation styling */
+label[for="__toc"] {
+  display: none !important;
+}
+.md-nav__item .md-nav--secondary {
+  display: none !important;
+}
 .md-sidebar--primary {
   background-color: #ffffff !important;
   border-right: 1px solid #e2e8f0 !important;
