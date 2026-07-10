@@ -774,11 +774,17 @@ label[for*="toc"] {
   display: block !important;
   white-space: normal !important;
 }
+.md-sidebar--secondary .md-nav__link * {
+  text-align: left !important;
+}
 .md-sidebar--secondary .md-nav__link--active {
   background-color: transparent !important;
   border: none !important;
   color: #0e7490 !important; /* theme dark cyan */
   font-weight: 700 !important;
+  text-align: left !important;
+  justify-content: flex-start !important;
+  display: block !important;
 }
 [data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__link--active {
   background-color: transparent !important;
