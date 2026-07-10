@@ -661,6 +661,8 @@ p code, li code, table code {
 .trey-inline-footer .md-footer__link .md-footer__title {
   margin: 0 !important;
   padding: 0 !important;
+  flex-grow: 1 !important;
+  min-width: 0 !important;
 }
 .trey-inline-footer .md-footer__link:hover {
   background-color: #f1f5f9 !important;
@@ -686,6 +688,7 @@ p code, li code, table code {
   letter-spacing: 0.05em;
   color: #94a3b8 !important;
   margin-bottom: 0.15rem !important;
+  white-space: nowrap !important; /* prevent wrapping to two lines */
 }
 .trey-inline-footer svg, 
 .trey-inline-footer .md-footer__icon {
