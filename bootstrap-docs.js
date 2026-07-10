@@ -613,30 +613,31 @@ label[for*="toc"] {
   display: none !important;
 }
 .md-sidebar--primary {
-  background-color: #ffffff !important;
-  border-right: 1px solid #e2e8f0 !important;
+  background-color: transparent !important;
+  border-right: none !important;
+  box-shadow: none !important;
 }
 [data-md-color-scheme="slate"] .md-sidebar--primary {
-  background-color: #0b0f19 !important;
-  border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background-color: transparent !important;
+  border-right: none !important;
 }
 .md-sidebar--primary .md-nav {
-  background-color: #ffffff !important;
+  background-color: transparent !important;
 }
 [data-md-color-scheme="slate"] .md-sidebar--primary .md-nav {
-  background-color: #0b0f19 !important;
+  background-color: transparent !important;
 }
 .md-sidebar--primary .md-nav__title {
-  background-color: #ffffff !important;
+  background-color: transparent !important;
   color: #0f172a !important;
   font-weight: 700 !important;
-  padding: 1rem 0.6rem !important;
-  border-bottom: 1px solid #e2e8f0 !important;
+  padding: 1.5rem 0.6rem 0.5rem 0.6rem !important;
+  border-bottom: none !important;
 }
 [data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__title {
-  background-color: #0b0f19 !important;
+  background-color: transparent !important;
   color: #ffffff !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-bottom: none !important;
 }
 .md-sidebar--secondary {
   background-color: transparent !important;
@@ -737,6 +738,10 @@ label[for*="toc"] {
 .md-sidebar--secondary .md-nav__link {
   font-size: 0.72rem !important;
   padding: 0.25rem 0.5rem !important;
+  text-align: left !important;
+  justify-content: flex-start !important;
+  display: block !important;
+  white-space: normal !important;
 }
 .md-sidebar--secondary .md-nav__link--active {
   background-color: transparent !important;
@@ -852,6 +857,9 @@ p code, li code, table code {
   font-size: 0.8rem !important;
   font-weight: 600 !important;
   color: #0f172a !important;
+  white-space: normal !important; /* disable truncation, allow wrap */
+  overflow: visible !important;
+  text-overflow: clip !important;
 }
 [data-md-color-scheme="slate"] .trey-inline-footer .md-footer__title {
   color: #ffffff !important;
@@ -1290,15 +1298,13 @@ theme:
     text: Inter
     code: JetBrains Mono
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
+    - scheme: default
       primary: slate
       accent: cyan
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+    - scheme: slate
       primary: slate
       accent: cyan
       toggle:
