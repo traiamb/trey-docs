@@ -1,0 +1,400 @@
+/* Color Palette and Custom Tokens matching trey-console */
+:root {
+  --md-primary-fg-color: #0f172a !important; /* slate-950 */
+  --md-primary-fg-color--dark: #090d16 !important;
+  --md-accent-fg-color: #06b6d4 !important; /* cyan-500 */
+  --md-default-bg-color: #f6f8fd !important; /* page background */
+  --md-default-fg-color: #0f172a !important; /* primary text */
+  --md-default-fg-color--light: #475569 !important; /* secondary text */
+  --md-default-fg-color--lighter: #94a3b8 !important;
+  
+  --md-code-bg-color: #f8fafc !important;
+  --md-code-fg-color: #0f172a !important;
+}
+
+/* Custom fonts */
+body, input {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+code, kbd, pre {
+  font-family: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Courier, monospace !important;
+}
+
+/* Header customization: clean, semi-transparent white with blur */
+.md-header {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  color: #0f172a !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-shadow: none !important;
+}
+.md-header__title {
+  color: #0f172a !important;
+  font-weight: 600 !important;
+}
+.md-header__button {
+  color: #0f172a !important;
+}
+.md-header__button.md-icon[for="__search"] {
+  color: #0f172a !important;
+}
+
+/* Navigation tabs styling */
+.md-tabs {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+.md-tabs__link {
+  color: #475569 !important;
+  font-weight: 500 !important;
+}
+.md-tabs__link--active {
+  color: #0f172a !important;
+}
+
+/* Content Container Card styling */
+.md-content {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 0.75rem !important; /* rounded-xl */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03) !important;
+  padding: 2rem !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Page title & headings */
+.md-content h1 {
+  font-size: 1.875rem !important; /* text-3xl */
+  font-weight: 600 !important;
+  color: #0f172a !important;
+  letter-spacing: -0.025em !important;
+  margin-bottom: 1.5rem !important;
+}
+.md-content h2 {
+  font-size: 1.25rem !important; /* text-xl */
+  font-weight: 600 !important;
+  color: #0f172a !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+
+/* Admonitions/Callouts styling matching trey-console */
+.admonition {
+  border-left-width: 4px !important;
+  border-radius: 0.5rem !important;
+  box-shadow: none !important;
+}
+.admonition.note, .admonition.info {
+  border-left-color: #06b6d4 !important; /* cyan-500 */
+  background-color: #ecfeff !important; /* cyan-50 */
+}
+.admonition.warning {
+  border-left-color: #f59e0b !important; /* amber-500 */
+  background-color: #fef3c7 !important; /* amber-50 */
+}
+.admonition.danger, .admonition.caution {
+  border-left-color: #f43f5e !important; /* rose-500 */
+  background-color: #fff1f2 !important; /* rose-50 */
+}
+.admonition.tip {
+  border-left-color: #10b981 !important; /* emerald-500 */
+  background-color: #ecfdf5 !important; /* emerald-50 */
+}
+.admonition-title {
+  background-color: transparent !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  padding-top: 0.75rem !important;
+  padding-bottom: 0 !important;
+}
+
+/* Sidebar navigation styling */
+.md-sidebar--primary {
+  background-color: #ffffff !important;
+  border-right: 1px solid #e2e8f0 !important;
+}
+.md-sidebar--secondary {
+  background-color: transparent !important;
+}
+.md-nav__link {
+  color: #475569 !important;
+  padding: 0.5rem 0.75rem !important;
+  border-radius: 0.5rem !important;
+  font-size: 0.875rem !important;
+  transition: all 0.2s !important;
+}
+.md-nav__link:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+.md-nav__link--active {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+.md-nav__link--active:hover {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+}
+
+/* Code block container */
+.highlight {
+  border-radius: 0.5rem !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+/* --- HERO BANNER & GRID LAYOUT FOR THE LANDING PAGE --- */
+.trey-hero {
+  position: relative;
+  overflow: hidden;
+  background-color: #0b0f19;
+  color: #ffffff;
+  padding: 3rem 2rem;
+  border-radius: 0.75rem;
+  margin-bottom: 3rem;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.trey-hero-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background-image: linear-gradient(#00e5ff 1px, transparent 1px), linear-gradient(90deg, #00e5ff 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+.trey-hero-container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (min-width: 992px) {
+  .trey-hero-container {
+    grid-template-cols: 1fr 340px;
+    align-items: center;
+  }
+}
+.trey-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  background-color: rgba(34, 211, 238, 0.1);
+  padding: 0.25rem 0.75rem;
+  font-family: monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: #22d3ee;
+  margin-bottom: 1.25rem;
+}
+.trey-icon {
+  width: 14px;
+  height: 14px;
+}
+.trey-hero-title {
+  color: #ffffff !important;
+  font-size: 2.25rem !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.03em !important;
+  margin-top: 0 !important;
+  margin-bottom: 1.25rem !important;
+}
+@media (min-width: 768px) {
+  .trey-hero-title {
+    font-size: 3.25rem !important;
+  }
+}
+.trey-hero-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  max-width: 600px;
+  margin-bottom: 1.75rem;
+}
+.trey-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.trey-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  text-decoration: none !important;
+  transition: all 0.2s;
+}
+.trey-btn-primary {
+  background-color: #22d3ee;
+  color: #0f172a !important;
+}
+.trey-btn-primary:hover {
+  background-color: #67e8f9;
+}
+.trey-btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff !important;
+}
+.trey-btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.trey-icon-btn {
+  width: 16px;
+  height: 16px;
+}
+
+/* Hero Run Card */
+.trey-hero-card {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+.trey-hero-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.trey-hero-card-header span {
+  font-family: monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #94a3b8;
+}
+.trey-icon-card {
+  width: 16px;
+  height: 16px;
+  color: #22d3ee;
+}
+.trey-hero-card-body {
+  margin: 0 !important;
+  background-color: transparent !important;
+  border: none !important;
+  color: #34d399 !important; /* emerald-400 */
+  font-size: 0.75rem !important;
+  line-height: 1.7 !important;
+}
+
+/* Homepage grid map */
+.trey-section-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .trey-section-title {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+.trey-section-badge {
+  font-family: monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: #0e7490; /* cyan-700 */
+  margin: 0 !important;
+}
+.trey-section-heading {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  color: #0f172a !important;
+  margin: 0.25rem 0 0 0 !important;
+}
+.trey-section-count {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0 !important;
+}
+
+/* Category cards grid */
+.trey-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-cols: 1fr;
+  margin-bottom: 3rem;
+}
+@media (min-width: 768px) {
+  .trey-grid {
+    grid-template-cols: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .trey-grid {
+    grid-template-cols: repeat(3, 1fr);
+  }
+}
+.trey-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.trey-card:hover {
+  border-color: #22d3ee;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+.trey-card h3 {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: #0f172a !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+.trey-card p {
+  font-size: 0.85rem;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0 0 1rem 0 !important;
+  flex-grow: 1;
+}
+.trey-card a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0e7490 !important;
+  text-decoration: none !important;
+}
+.trey-card a:hover {
+  color: #0891b2 !important;
+}
+
+/* Home page content card strip */
+.md-content:has(.home-page-container) {
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+.home-page-container h1,
+.home-page-container .md-content__meta {
+  display: none !important;
+}
