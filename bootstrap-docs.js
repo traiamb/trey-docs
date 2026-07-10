@@ -216,12 +216,14 @@ body, .md-container, .md-main {
   background-color: #090d16 !important;
 }
 
-/* Custom fonts */
+/* Custom fonts - Verdana Font family and reduced font size for compact UI */
 body, input {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  font-family: Verdana, Geneva, sans-serif !important;
+  font-size: 0.8rem !important;
 }
 code, kbd, pre {
   font-family: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Courier, monospace !important;
+  font-size: 0.72rem !important;
 }
 
 /* Header customization: clean, semi-transparent white with blur */
@@ -331,7 +333,7 @@ code, kbd, pre {
 }
 
 .trey-page-title {
-  font-size: 2.25rem !important;
+  font-size: 1.6rem !important;
   font-weight: 700 !important;
   color: #0f172a !important;
   margin: 0.5rem 0 !important;
@@ -342,10 +344,10 @@ code, kbd, pre {
 }
 
 .trey-page-description {
-  font-size: 1rem !important;
+  font-size: 0.85rem !important;
   color: #475569 !important;
-  margin: 0.5rem 0 1.5rem 0 !important;
-  line-height: 1.6 !important;
+  margin: 0.5rem 0 1.25rem 0 !important;
+  line-height: 1.5 !important;
 }
 [data-md-color-scheme="slate"] .trey-page-description {
   color: #cbd5e1 !important;
@@ -357,7 +359,7 @@ code, kbd, pre {
   border: 1px solid #e2e8f0 !important;
   border-radius: 0.75rem !important; /* rounded-xl */
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03) !important;
-  padding: 2.5rem !important;
+  padding: 2.25rem !important;
   margin-bottom: 2rem !important;
 }
 [data-md-color-scheme="slate"] .trey-content-card {
@@ -368,11 +370,11 @@ code, kbd, pre {
 
 /* Section Headings inside card */
 .trey-content-card h2 {
-  font-size: 1.25rem !important; /* text-xl */
+  font-size: 1.1rem !important; /* text-lg */
   font-weight: 600 !important;
   color: #0f172a !important;
-  margin-top: 1.75rem !important;
-  margin-bottom: 0.75rem !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.5rem !important;
   border-bottom: none !important;
   padding-bottom: 0 !important;
 }
@@ -382,28 +384,32 @@ code, kbd, pre {
 .trey-content-card h2:first-of-type {
   margin-top: 0 !important;
 }
+.trey-content-card p, .trey-content-card li {
+  font-size: 0.75rem !important;
+  line-height: 1.5 !important;
+}
 
 /* Custom Callouts styled dynamically via JS */
 .custom-callout {
   border-left: 4px solid #cbd5e1 !important;
   background-color: #f8fafc !important;
-  padding: 1rem 1.25rem !important;
+  padding: 0.75rem 1rem !important;
   border-radius: 0.5rem !important;
-  margin: 1.5rem 0 !important;
+  margin: 1.25rem 0 !important;
 }
 .custom-callout p {
   margin: 0 !important;
-  font-size: 0.875rem !important;
+  font-size: 0.72rem !important;
   color: #334155 !important;
-  line-height: 1.6 !important;
+  line-height: 1.5 !important;
 }
 [data-md-color-scheme="slate"] .custom-callout p {
   color: #cbd5e1 !important;
 }
 .custom-callout .callout-title {
   font-weight: 700 !important;
-  font-size: 0.875rem !important;
-  margin-bottom: 0.35rem !important;
+  font-size: 0.72rem !important;
+  margin-bottom: 0.25rem !important;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -527,9 +533,9 @@ code, kbd, pre {
 }
 .md-nav__link {
   color: #475569 !important;
-  padding: 0.5rem 0.75rem !important;
-  border-radius: 0.5rem !important;
-  font-size: 0.875rem !important;
+  padding: 0.35rem 0.6rem !important;
+  border-radius: 0.375rem !important;
+  font-size: 0.75rem !important;
   transition: all 0.2s !important;
   display: flex !important;
   align-items: center !important;
@@ -564,12 +570,22 @@ code, kbd, pre {
   color: #0b0f19 !important;
 }
 
+/* Sidebar category headers bold styling */
+.md-nav__item--nested > .md-nav__link {
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  font-size: 0.78rem !important;
+}
+[data-md-color-scheme="slate"] .md-nav__item--nested > .md-nav__link {
+  color: #ffffff !important;
+}
+
 /* Sidebar navigation status badges (cyan, blue, purple) */
 .sidebar-status-badge {
   display: inline-flex;
   align-items: center;
-  padding: 0.1rem 0.35rem;
-  font-size: 0.55rem;
+  padding: 0.05rem 0.25rem;
+  font-size: 0.5rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -600,6 +616,10 @@ code, kbd, pre {
 }
 
 /* Secondary table of contents navigation active highlight pill */
+.md-sidebar--secondary .md-nav__link {
+  font-size: 0.72rem !important;
+  padding: 0.25rem 0.5rem !important;
+}
 .md-sidebar--secondary .md-nav__link--active {
   background-color: #ecfeff !important;
   border: 1px solid #cffafe !important;
@@ -620,6 +640,46 @@ code, kbd, pre {
 }
 [data-md-color-scheme="slate"] .highlight {
   border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Footer previous/next page navigation buttons styling */
+.md-footer {
+  background-color: #ffffff !important;
+  border-top: 1px solid #e2e8f0 !important;
+  font-family: Verdana, Geneva, sans-serif !important;
+}
+[data-md-color-scheme="slate"] .md-footer {
+  background-color: #0b0f19 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+.md-footer__inner {
+  padding: 0.5rem 1rem !important;
+}
+.md-footer__link {
+  padding: 0.4rem 0.8rem !important;
+  border-radius: 0.375rem !important;
+  transition: background-color 0.2s !important;
+  max-width: 45% !important;
+}
+.md-footer__link:hover {
+  background-color: #f1f5f9 !important;
+}
+[data-md-color-scheme="slate"] .md-footer__link:hover {
+  background-color: #1e293b !important;
+}
+.md-footer__title {
+  font-size: 0.72rem !important;
+  color: #475569 !important;
+}
+[data-md-color-scheme="slate"] .md-footer__title {
+  color: #cbd5e1 !important;
+}
+.md-footer__direction {
+  font-size: 0.6rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8 !important;
 }
 
 /* --- HERO BANNER & GRID LAYOUT FOR THE LANDING PAGE --- */
@@ -1026,8 +1086,8 @@ theme:
         name: Switch to light mode
   features:
     - navigation.sections
-    - navigation.expand
     - navigation.top
+    - navigation.footer
     - search.suggest
     - search.highlight
     - content.code.copy
