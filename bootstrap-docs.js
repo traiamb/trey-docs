@@ -278,14 +278,15 @@ code, kbd, pre {
   position: relative !important;
   width: 200px !important;
   transition: width 0.25s !important;
-  margin-right: 0.5rem !important;
+  margin-left: auto !important; /* Push search bar and theme switch to the far right */
+  order: 2 !important;
 }
 .md-search:focus-within {
   width: 280px !important;
 }
 .md-search__form {
   background-color: #f1f5f9 !important; /* soft grey-white */
-  border-radius: 0.5rem !important; /* rounded-lg */
+  border-radius: 9999px !important; /* pill rounded search bar */
   border: 1px solid #e2e8f0 !important;
   transition: all 0.2s !important;
 }
@@ -297,8 +298,9 @@ code, kbd, pre {
   color: #0f172a !important;
   font-size: 0.75rem !important;
   padding-left: 2rem !important;
+  padding-right: 2rem !important;
   height: 2rem !important;
-  border-radius: 0.5rem !important;
+  border-radius: 9999px !important;
 }
 [data-md-color-scheme="slate"] .md-search__input {
   color: #ffffff !important;
@@ -327,7 +329,7 @@ code, kbd, pre {
   font-weight: 600 !important;
   box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
   position: absolute !important;
-  right: 0.5rem !important;
+  right: 0.75rem !important; /* fits nicely in the pill shape */
   top: 50% !important;
   transform: translateY(-50%) !important;
   pointer-events: none !important;
@@ -338,17 +340,10 @@ code, kbd, pre {
   border-color: rgba(255, 255, 255, 0.15) !important;
 }
 
-/* GitHub repo source link and Palette toggle overrides */
-.md-source__icon {
-  color: #0f172a !important;
-  width: 1.25rem !important;
-  height: 1.25rem !important;
-}
-[data-md-color-scheme="slate"] .md-source__icon {
-  color: #ffffff !important;
-}
+/* Theme toggle (palette toggle) overrides */
 .md-header__option {
   margin-left: 0.5rem !important;
+  order: 3 !important; /* far right */
 }
 
 /* Navigation tabs styling */
@@ -1252,6 +1247,12 @@ const extraJsContent = `document.addEventListener("DOMContentLoaded", function()
 
   // Relocate previous/next page footer navigation to sit right below the content card
   function relocateFooter() {
+    // Update Table of Contents title
+    const tocTitle = document.querySelector(".md-sidebar--secondary .md-nav__title");
+    if (tocTitle && !tocTitle.innerHTML.includes("On this page")) {
+      tocTitle.innerHTML = '<span class="md-nav__icon md-icon"></span>On this page';
+    }
+
     const prevLink = document.querySelector(".md-footer__link--prev");
     const nextLink = document.querySelector(".md-footer__link--next");
     const contentCard = document.querySelector(".trey-content-card");
@@ -1281,8 +1282,6 @@ fs.writeFileSync(logoPath, `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0
 console.log('Creating mkdocs.yml...');
 const mkdocsConfig = `site_name: Trey Documentation
 site_description: Local-first AI engineering operations cockpit.
-repo_url: https://github.com/traiamb/trey-docs
-repo_name: traiamb/trey-docs
 theme:
   name: material
   logo: assets/logo.svg

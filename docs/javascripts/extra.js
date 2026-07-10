@@ -91,6 +91,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Relocate previous/next page footer navigation to sit right below the content card
   function relocateFooter() {
+    // Update Table of Contents title
+    const tocTitle = document.querySelector(".md-sidebar--secondary .md-nav__title");
+    if (tocTitle && !tocTitle.innerHTML.includes("On this page")) {
+      tocTitle.innerHTML = '<span class="md-nav__icon md-icon"></span>On this page';
+    }
+
     const prevLink = document.querySelector(".md-footer__link--prev");
     const nextLink = document.querySelector(".md-footer__link--next");
     const contentCard = document.querySelector(".trey-content-card");

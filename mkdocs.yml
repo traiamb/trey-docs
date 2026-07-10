@@ -1,7 +1,5 @@
 site_name: Trey Documentation
 site_description: Local-first AI engineering operations cockpit.
-repo_url: https://github.com/traiamb/trey-docs
-repo_name: traiamb/trey-docs
 theme:
   name: material
   logo: assets/logo.svg
