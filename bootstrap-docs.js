@@ -628,16 +628,22 @@ label[for*="toc"] {
   background-color: transparent !important;
 }
 .md-sidebar--primary .md-nav__title {
-  background-color: transparent !important;
+  background-color: rgba(246, 248, 253, 0.9) !important; /* matches body background */
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
   color: #0f172a !important;
   font-weight: 700 !important;
-  padding: 1.5rem 0.6rem 0.5rem 0.6rem !important;
-  border-bottom: none !important;
+  padding: 1rem 0.6rem !important;
+  border-radius: 0 0 0.5rem 0.5rem !important; /* rounded corners at bottom */
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 10 !important;
 }
 [data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__title {
-  background-color: transparent !important;
+  background-color: rgba(9, 13, 22, 0.9) !important; /* matches dark body background */
   color: #ffffff !important;
-  border-bottom: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 .md-sidebar--secondary {
   background-color: transparent !important;
