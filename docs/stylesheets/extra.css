@@ -670,12 +670,12 @@ p code, li code, table code {
 .trey-inline-footer .md-footer__link {
   display: flex !important;
   align-items: center !important;
-  gap: 0.25rem !important; /* tight neat gap */
+  gap: 0.35rem !important; /* balanced neat gap */
   text-decoration: none !important;
-  max-width: 50% !important;
-  flex-grow: 1 !important;
+  width: 49% !important; /* force button to expand and fill space */
+  max-width: 49% !important;
   background-color: transparent !important;
-  padding: 0.35rem 0.25rem !important; /* reduced side padding to maximize text space */
+  padding: 0.35rem 0.5rem !important; /* padding restored for hover background look */
   margin: 0 !important;
   border-radius: 0.375rem !important;
   transition: background-color 0.2s !important;
