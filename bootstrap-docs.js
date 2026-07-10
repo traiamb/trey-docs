@@ -580,6 +580,14 @@ code, kbd, pre {
   color: #ffffff !important;
 }
 
+/* Indent nested sub-options in the sidebar */
+.md-nav__list .md-nav__list .md-nav__link {
+  padding-left: 1.5rem !important;
+}
+.md-nav__list .md-nav__list .md-nav__list .md-nav__link {
+  padding-left: 2.25rem !important;
+}
+
 /* Sidebar navigation status badges (cyan, blue, purple) */
 .sidebar-status-badge {
   display: inline-flex;
