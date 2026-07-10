@@ -632,11 +632,11 @@ p code, li code, table code {
 .trey-inline-footer .md-footer__link {
   display: flex !important;
   align-items: center !important;
-  gap: 0.2rem !important; /* significantly reduced gap */
+  gap: 0.25rem !important; /* tight neat gap */
   text-decoration: none !important;
   max-width: 48% !important;
   background-color: transparent !important;
-  padding: 0.5rem 0.75rem !important;
+  padding: 0.35rem 0.5rem !important;
   margin: 0 !important;
   border-radius: 0.375rem !important;
   transition: background-color 0.2s !important;
@@ -644,7 +644,6 @@ p code, li code, table code {
 .trey-inline-footer .md-footer__link--next {
   margin-left: auto !important;
   text-align: right !important;
-  flex-direction: row-reverse !important; /* next icon at suffix */
 }
 .trey-inline-footer .md-footer__link .md-footer__button {
   margin: 0 !important;
@@ -652,6 +651,10 @@ p code, li code, table code {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
+}
+.trey-inline-footer .md-footer__link .md-footer__title {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .trey-inline-footer .md-footer__link:hover {
   background-color: #f1f5f9 !important;
