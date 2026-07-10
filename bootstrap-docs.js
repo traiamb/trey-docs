@@ -202,7 +202,7 @@ const extraCssContent = `/* Color Palette and Custom Tokens matching trey-consol
   --md-default-fg-color--light: #475569 !important; /* secondary text */
   --md-default-fg-color--lighter: #94a3b8 !important;
   
-  --md-code-bg-color: #f8fafc !important;
+  --md-code-bg-color: #f5f8ff !important; /* soft purple-blue code background */
   --md-code-fg-color: #0f172a !important;
 }
 
@@ -215,7 +215,7 @@ const extraCssContent = `/* Color Palette and Custom Tokens matching trey-consol
   --md-default-fg-color--light: #cbd5e1 !important; /* secondary text */
   --md-default-fg-color--lighter: #475569 !important;
   
-  --md-code-bg-color: #1e293b !important;
+  --md-code-bg-color: #0f172a !important; /* dark slate-900 code background */
   --md-code-fg-color: #f8fafc !important;
 }
 
@@ -660,14 +660,53 @@ label[for="__toc"] {
   color: #22d3ee !important;
 }
 
+/* Inline code elements styling */
+p code, li code, table code {
+  color: #1e40af !important; /* attractive deep blue */
+  background-color: #eff6ff !important; /* extremely soft blue background */
+  border: 1px solid #dbeafe !important; /* soft light blue border */
+  border-radius: 0.25rem !important;
+  padding: 0.125rem 0.35rem !important;
+  font-family: "JetBrains Mono", Courier, monospace !important;
+  font-size: 0.72rem !important;
+  word-break: break-word !important;
+}
+
+[data-md-color-scheme="slate"] p code, 
+[data-md-color-scheme="slate"] li code, 
+[data-md-color-scheme="slate"] table code {
+  color: #38bdf8 !important; /* cyan-400 in dark mode */
+  background-color: rgba(56, 189, 248, 0.08) !important;
+  border: 1px solid rgba(56, 189, 248, 0.2) !important;
+}
+
 /* Code block container */
 .highlight {
   border-radius: 0.5rem !important;
-  border: 1px solid #e2e8f0 !important;
+  border: 1px solid #dbeafe !important; /* soft blue border matching inline code */
 }
 [data-md-color-scheme="slate"] .highlight {
   border-color: rgba(255, 255, 255, 0.1) !important;
 }
+
+/* Pygments syntax highlighting overrides for premium aesthetics */
+.highlight .k { color: #059669 !important; font-weight: bold !important; } /* green keywords like 'import', 'class' */
+.highlight .nc { color: #2563eb !important; font-weight: bold !important; } /* blue class names */
+.highlight .nn { color: #2563eb !important; } /* blue module names */
+.highlight .s, .highlight .s2 { color: #1d4ed8 !important; font-style: italic !important; } /* blue strings */
+.highlight .sd { color: #475569 !important; font-style: italic !important; } /* comments / docstrings */
+.highlight .mi { color: #d97706 !important; } /* orange numbers */
+.highlight .nb { color: #0284c7 !important; } /* builtins */
+.highlight .nf { color: #2563eb !important; } /* functions */
+
+[data-md-color-scheme="slate"] .highlight .k { color: #34d399 !important; } /* emerald-400 */
+[data-md-color-scheme="slate"] .highlight .nc { color: #38bdf8 !important; } /* sky-400 */
+[data-md-color-scheme="slate"] .highlight .nn { color: #38bdf8 !important; }
+[data-md-color-scheme="slate"] .highlight .s, [data-md-color-scheme="slate"] .highlight .s2 { color: #93c5fd !important; }
+[data-md-color-scheme="slate"] .highlight .sd { color: #94a3b8 !important; }
+[data-md-color-scheme="slate"] .highlight .mi { color: #fbbf24 !important; }
+[data-md-color-scheme="slate"] .highlight .nb { color: #60a5fa !important; }
+[data-md-color-scheme="slate"] .highlight .nf { color: #38bdf8 !important; }
 
 /* Footer previous/next page navigation buttons styling */
 .trey-inline-footer {
