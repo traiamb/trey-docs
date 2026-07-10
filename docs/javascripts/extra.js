@@ -108,7 +108,35 @@ document.addEventListener("DOMContentLoaded", function() {
       contentCard.parentNode.insertBefore(inlineFooter, contentCard.nextSibling);
     }
   }
+
+  // Highlight first TOC link (Overview) by default when scroll position is near top
+  function handleTOCDefaultHighlight() {
+    const firstTOCLink = document.querySelector(".md-sidebar--secondary .md-nav__list > .md-nav__item:first-child > .md-nav__link");
+    if (!firstTOCLink) return;
+    
+    const activeLinks = document.querySelectorAll(".md-sidebar--secondary .md-nav__link--active");
+    
+    if (window.scrollY < 50) {
+      // At the top, force ONLY the first link to be active
+      activeLinks.forEach(link => {
+        if (link !== firstTOCLink) link.classList.remove("md-nav__link--active");
+      });
+      firstTOCLink.classList.add("md-nav__link--active");
+    } else {
+      // Fallback: if scrollspy deactivated all links, highlight the first one
+      if (activeLinks.length === 0) {
+        firstTOCLink.classList.add("md-nav__link--active");
+      }
+    }
+  }
+
   relocateFooter();
-  const observer = new MutationObserver(relocateFooter);
+  handleTOCDefaultHighlight();
+  
+  const observer = new MutationObserver(() => {
+    relocateFooter();
+    handleTOCDefaultHighlight();
+  });
   observer.observe(document.body, { childList: true, subtree: true });
+  window.addEventListener("scroll", handleTOCDefaultHighlight);
 });

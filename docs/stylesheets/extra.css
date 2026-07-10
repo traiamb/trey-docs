@@ -547,9 +547,27 @@ label[for*="toc"] {
 }
 
 /* Secondary table of contents navigation active highlight pill */
+.md-sidebar--secondary .md-nav__title {
+  display: block !important;
+  font-weight: 700 !important;
+  font-size: 0.72rem !important;
+  color: #0f172a !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.5rem 0.5rem 0.5rem !important;
+  border-bottom: none !important;
+  pointer-events: none !important;
+}
+[data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__title {
+  color: #ffffff !important;
+}
+.md-sidebar--secondary .md-nav__title .md-nav__icon {
+  display: none !important;
+}
 .md-sidebar--secondary .md-nav__link {
   font-size: 0.72rem !important;
-  padding: 0.25rem 0.5rem !important;
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
   text-align: left !important;
   justify-content: flex-start !important;
   display: block !important;

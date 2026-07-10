@@ -741,9 +741,27 @@ label[for*="toc"] {
 }
 
 /* Secondary table of contents navigation active highlight pill */
+.md-sidebar--secondary .md-nav__title {
+  display: block !important;
+  font-weight: 700 !important;
+  font-size: 0.72rem !important;
+  color: #0f172a !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.5rem 0.5rem 0.5rem !important;
+  border-bottom: none !important;
+  pointer-events: none !important;
+}
+[data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__title {
+  color: #ffffff !important;
+}
+.md-sidebar--secondary .md-nav__title .md-nav__icon {
+  display: none !important;
+}
 .md-sidebar--secondary .md-nav__link {
   font-size: 0.72rem !important;
-  padding: 0.25rem 0.5rem !important;
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
   text-align: left !important;
   justify-content: flex-start !important;
   display: block !important;
@@ -1284,9 +1302,37 @@ const extraJsContent = `document.addEventListener("DOMContentLoaded", function()
       contentCard.parentNode.insertBefore(inlineFooter, contentCard.nextSibling);
     }
   }
+
+  // Highlight first TOC link (Overview) by default when scroll position is near top
+  function handleTOCDefaultHighlight() {
+    const firstTOCLink = document.querySelector(".md-sidebar--secondary .md-nav__list > .md-nav__item:first-child > .md-nav__link");
+    if (!firstTOCLink) return;
+    
+    const activeLinks = document.querySelectorAll(".md-sidebar--secondary .md-nav__link--active");
+    
+    if (window.scrollY < 50) {
+      // At the top, force ONLY the first link to be active
+      activeLinks.forEach(link => {
+        if (link !== firstTOCLink) link.classList.remove("md-nav__link--active");
+      });
+      firstTOCLink.classList.add("md-nav__link--active");
+    } else {
+      // Fallback: if scrollspy deactivated all links, highlight the first one
+      if (activeLinks.length === 0) {
+        firstTOCLink.classList.add("md-nav__link--active");
+      }
+    }
+  }
+
   relocateFooter();
-  const observer = new MutationObserver(relocateFooter);
+  handleTOCDefaultHighlight();
+  
+  const observer = new MutationObserver(() => {
+    relocateFooter();
+    handleTOCDefaultHighlight();
+  });
   observer.observe(document.body, { childList: true, subtree: true });
+  window.addEventListener("scroll", handleTOCDefaultHighlight);
 });`;
 const extraJsPath = path.join(DOCS_DIR, 'javascripts/extra.js');
 ensureDirectoryExistence(extraJsPath);
