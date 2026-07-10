@@ -1,10 +1,14 @@
-# Repositories
 
-> **Status**: `MVP` | **Category**: Core Concepts
+<div class="trey-page-header">
+  <div class="trey-header-meta">
+    <span class="trey-status-badge status-mvp">MVP</span>
+    <span class="trey-category-badge">Core Concepts</span>
+  </div>
+  <h1 class="trey-page-title">Repositories</h1>
+  <p class="trey-page-description">Registered codebases Trey can clone, inspect, isolate, test, and propose changes against.</p>
+</div>
 
-Registered codebases Trey can clone, inspect, isolate, test, and propose changes against.
-
----
+<div class="trey-content-card" markdown="1">
 
 ## Overview
 Repositories represent the codebases registered under a Trey workspace. Trey integrates with git hosting providers (GitHub, GitLab) to orchestrate work branches, fetch requirements, propose diffs, and generate pull requests.
@@ -27,3 +31,5 @@ Each repository can define granular rules to guide agents and restrict automated
   "protectedPaths": ["next.config.ts", "src/auth/**"]
 }
 ```
+
+</div>

@@ -1,10 +1,14 @@
-# Runners
 
-> **Status**: `MVP` | **Category**: Core Concepts
+<div class="trey-page-header">
+  <div class="trey-header-meta">
+    <span class="trey-status-badge status-mvp">MVP</span>
+    <span class="trey-category-badge">Core Concepts</span>
+  </div>
+  <h1 class="trey-page-title">Runners</h1>
+  <p class="trey-page-description">Machines that run the Trey daemon and perform isolated engineering work.</p>
+</div>
 
-Machines that run the Trey daemon and perform isolated engineering work.
-
----
+<div class="trey-content-card" markdown="1">
 
 ## Overview
 Runners represent the execution machines that host the Go runner daemon (`trey-daemon`). Runners poll the Spring Boot orchestrator for tasks, run them in sandboxed environments, and report health and telemetry.
@@ -18,3 +22,5 @@ Runners are hardened execution environments designed to run code modifications s
 - **Multi-Tenant Scoping**: Runners belong to a specific workspace or company. Heartbeats are signed with cryptographically hashed runner tokens.
 - **Liveness & Heartbeats**: Runners report heartbeat updates every 10 seconds. Offline states are immediately flagged.
 - **Telemetry Capture**: Reports CPU load, memory utilization, disk space, and command execution queues.
+
+</div>

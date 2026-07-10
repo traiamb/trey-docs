@@ -1,10 +1,14 @@
-# Platform Console
 
-> **Status**: `MVP` | **Category**: Console UI
+<div class="trey-page-header">
+  <div class="trey-header-meta">
+    <span class="trey-status-badge status-mvp">MVP</span>
+    <span class="trey-category-badge">Console UI</span>
+  </div>
+  <h1 class="trey-page-title">Platform Console</h1>
+  <p class="trey-page-description">The platform view for super admins to manage companies, users, subscriptions, runners, and complaints.</p>
+</div>
 
-The platform view for super admins to manage companies, users, subscriptions, runners, and complaints.
-
----
+<div class="trey-content-card" markdown="1">
 
 ## Overview
 The Platform Console is the administration control cockpit reserved for Super Admins. It manages billing subscriptions, resolves company accounts, audits logs, and handles troubleshooting tickets.
@@ -18,3 +22,5 @@ Super Admins supervise the global health of the Trey network without bypassing i
 - **Company Lockout**: Suspend or reactivate company workspace access based on billing or violations.
 - **Support & Troubleshooting Sessions**: Securely inspect runner logs and task states to debug client complaints.
 - **Fleet Diagnostics**: Quarantine failing runners and inspect global telemetry metrics.
+
+</div>

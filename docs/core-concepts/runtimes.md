@@ -1,10 +1,14 @@
-# Runtimes
 
-> **Status**: `MVP` | **Category**: Core Concepts
+<div class="trey-page-header">
+  <div class="trey-header-meta">
+    <span class="trey-status-badge status-mvp">MVP</span>
+    <span class="trey-category-badge">Core Concepts</span>
+  </div>
+  <h1 class="trey-page-title">Runtimes</h1>
+  <p class="trey-page-description">Coding and model tools such as Claude Code, Codex CLI, Cursor CLI, and OpenCode/Ollama.</p>
+</div>
 
-Coding and model tools such as Claude Code, Codex CLI, Cursor CLI, and OpenCode/Ollama.
-
----
+<div class="trey-content-card" markdown="1">
 
 ## Overview
 Runtimes are the actual coding engines (e.g. Claude Code, Cursor CLI, local OpenCode/Ollama) started by the Go daemon to inspect, edit, and refactor code.
@@ -17,3 +21,5 @@ The runner daemon periodically probes the host system to check the installation,
 - **AVAILABLE**: The binary is detected and authenticated.
 - **AUTH_REQUIRED**: The binary exists but requires authorization (e.g., Claude login expired).
 - **UNAVAILABLE**: The binary is missing or not in the system PATH.
+
+</div>

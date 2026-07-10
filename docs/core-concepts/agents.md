@@ -1,10 +1,14 @@
-# Agents
 
-> **Status**: `MVP` | **Category**: Core Concepts
+<div class="trey-page-header">
+  <div class="trey-header-meta">
+    <span class="trey-status-badge status-mvp">MVP</span>
+    <span class="trey-category-badge">Core Concepts</span>
+  </div>
+  <h1 class="trey-page-title">Agents</h1>
+  <p class="trey-page-description">Logical engineering roles with scope, prompts, permissions, and default review expectations.</p>
+</div>
 
-Logical engineering roles with scope, prompts, permissions, and default review expectations.
-
----
+<div class="trey-content-card" markdown="1">
 
 ## Overview
 Trey uses specialized logical Agent Roles rather than a single chat instance. Each agent role represents a technical specialization with distinct capabilities, prompts, and default review policies.
@@ -17,3 +21,5 @@ Trey uses specialized logical Agent Roles rather than a single chat instance. Ea
 Agents suggest and draft files, but they are not system administrators. They operate inside a strict sandbox and cannot bypass security limits.
 - **No Direct Write**: Agents write changes in local git worktrees. They have no push access to protected git branches.
 - **Prompt Hardening**: Agent system prompts strictly enforce policy compliance, secure coding practices, and tool usage regulations.
+
+</div>

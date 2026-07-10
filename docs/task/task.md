@@ -1,10 +1,14 @@
-# Task
 
-> **Status**: `MVP` | **Category**: Core Concepts
+<div class="trey-page-header">
+  <div class="trey-header-meta">
+    <span class="trey-status-badge status-mvp">MVP</span>
+    <span class="trey-category-badge">Core Concepts</span>
+  </div>
+  <h1 class="trey-page-title">Task</h1>
+  <p class="trey-page-description">Understand task lifecycle, plan, creation, agent execution, and summarization.</p>
+</div>
 
-Understand task lifecycle, plan, creation, agent execution, and summarization.
-
----
+<div class="trey-content-card" markdown="1">
 
 ## Overview
 A Task is the primary operational primitive in Trey, representing a bounded engineering objective to be resolved on a repository. It encapsulates requirement definitions, coordinates agent routing, manages runner/runtime assignments, holds execution logs, captures mechanical verification evidence, and coordinates human approval gates.
@@ -47,3 +51,5 @@ The agent runtime (e.g. Claude Code or OpenCode) does not execute directly on yo
   "title": "Fix memory leak in background worker"
 }
 ```
+
+</div>

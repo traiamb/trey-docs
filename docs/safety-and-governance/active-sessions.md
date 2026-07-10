@@ -1,10 +1,14 @@
-# Active Sessions
 
-> **Status**: `MVP` | **Category**: Safety and Governance
+<div class="trey-page-header">
+  <div class="trey-header-meta">
+    <span class="trey-status-badge status-mvp">MVP</span>
+    <span class="trey-category-badge">Safety and Governance</span>
+  </div>
+  <h1 class="trey-page-title">Active Sessions</h1>
+  <p class="trey-page-description">Manage and audit active CLI and web console sessions.</p>
+</div>
 
-Manage and audit active CLI and web console sessions.
-
----
+<div class="trey-content-card" markdown="1">
 
 ## Overview
 Active Sessions protect the platform from unauthorized token reuse. Trey tracks all active user logins, CLI handshakes, and API tokens under a single audit dashboard.
@@ -23,3 +27,5 @@ Users can audit active sessions directly from the Settings screen inside the con
 GET /api/v1/auth/sessions
 DELETE /api/v1/auth/sessions/{sessionId}/revoke
 ```
+
+</div>

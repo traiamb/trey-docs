@@ -1,10 +1,14 @@
-# Git Worktrees
 
-> **Status**: `MVP` | **Category**: Core Concepts
+<div class="trey-page-header">
+  <div class="trey-header-meta">
+    <span class="trey-status-badge status-mvp">MVP</span>
+    <span class="trey-category-badge">Core Concepts</span>
+  </div>
+  <h1 class="trey-page-title">Git Worktrees</h1>
+  <p class="trey-page-description">How Trey isolates task execution from your main working copy and protected branches.</p>
+</div>
 
-How Trey isolates task execution from your main working copy and protected branches.
-
----
+<div class="trey-content-card" markdown="1">
 
 ## Overview
 Trey isolates task execution from the developer's primary working directory by using Git Worktrees. This prevents uncommitted edits from being overwritten or combined with automated changes.
@@ -19,3 +23,5 @@ Trey isolates task execution from the developer's primary working directory by u
 3. Runtimes modify files only in this worktree directory.
 4. Verification runs build/test in this path.
 5. Worktree is pruned once the task is completed or aborted.
+
+</div>

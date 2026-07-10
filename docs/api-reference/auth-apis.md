@@ -1,10 +1,14 @@
-# Auth APIs
 
-> **Status**: `Reference` | **Category**: API Reference
+<div class="trey-page-header">
+  <div class="trey-header-meta">
+    <span class="trey-status-badge status-reference">Reference</span>
+    <span class="trey-category-badge">API Reference</span>
+  </div>
+  <h1 class="trey-page-title">Auth APIs</h1>
+  <p class="trey-page-description">Authenticate users, manage sessions, and authorize CLI connections.</p>
+</div>
 
-Authenticate users, manage sessions, and authorize CLI connections.
-
----
+<div class="trey-content-card" markdown="1">
 
 ## Overview
 Auth APIs manage identity validation, cookie rotation, active sessions, and CLI authorize flows.
@@ -19,3 +23,5 @@ POST /api/v1/auth/refresh      # Cookie token rotation
 GET  /api/v1/auth/sessions     # List active sessions
 POST /api/v1/auth/cli/authorize # CLI OAuth handshake
 ```
+
+</div>
