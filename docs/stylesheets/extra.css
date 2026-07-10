@@ -176,8 +176,15 @@ code, kbd, pre {
 }
 
 /* Layout widths and margins */
+.md-grid {
+  max-width: 1440px !important; /* expand main wrapper grid */
+}
+.md-main__inner {
+  padding-left: 0.5rem !important; /* reduce left gutter side space */
+  padding-right: 0.5rem !important; /* reduce right gutter side space */
+}
 .md-content__inner {
-  max-width: 840px !important;
+  max-width: 1000px !important; /* expand main text card width to fit more content */
   padding: 0 !important;
   margin-top: 1.5rem !important;
 }
