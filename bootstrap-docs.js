@@ -193,7 +193,7 @@ fs.writeFileSync(path.join(DOCS_DIR, 'index.md'), landingHtml, 'utf-8');
 // Write extra.css
 console.log('Writing extra.css stylesheet...');
 const extraCssContent = `/* Color Palette and Custom Tokens matching trey-console */
-:root {
+:root, [data-md-color-scheme="default"] {
   --md-primary-fg-color: #0f172a !important; /* slate-950 */
   --md-primary-fg-color--dark: #090d16 !important;
   --md-accent-fg-color: #06b6d4 !important; /* cyan-500 */
@@ -206,11 +206,24 @@ const extraCssContent = `/* Color Palette and Custom Tokens matching trey-consol
   --md-code-fg-color: #0f172a !important;
 }
 
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #ffffff !important;
+  --md-primary-fg-color--dark: #cbd5e1 !important;
+  --md-accent-fg-color: #22d3ee !important; /* cyan-400 */
+  --md-default-bg-color: #090d16 !important; /* slate-950 background */
+  --md-default-fg-color: #f8fafc !important; /* light text */
+  --md-default-fg-color--light: #cbd5e1 !important; /* secondary text */
+  --md-default-fg-color--lighter: #475569 !important;
+  
+  --md-code-bg-color: #1e293b !important;
+  --md-code-fg-color: #f8fafc !important;
+}
+
 /* Viewport and Page backgrounds */
 body, .md-container, .md-main {
   background-color: #f6f8fd !important;
 }
-[data-md-color-scheme="slate"] body, 
+[data-md-color-scheme="slate"], 
 [data-md-color-scheme="slate"] .md-container, 
 [data-md-color-scheme="slate"] .md-main {
   background-color: #090d16 !important;
