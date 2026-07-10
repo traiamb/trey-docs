@@ -49,3 +49,172 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Introduction: getting-started/introduction.md
+      - What is Trey?: getting-started/what-is-trey.md
+      - Why Local-First?: getting-started/why-local-first.md
+      - Installation Overview: getting-started/installation-overview.md
+      - Local Development Setup: getting-started/local-development-setup.md
+      - First Task Run: getting-started/first-task-run.md
+      - Glossary: getting-started/glossary.md
+  - Core Concepts:
+      - Workspaces: core-concepts/workspaces.md
+      - Repositories: core-concepts/repositories.md
+      - Agents: core-concepts/agents.md
+      - Task: core-concepts/task.md
+      - Daemon vs Agent: core-concepts/daemon-vs-agent.md
+      - Runners: core-concepts/runners.md
+      - Runtimes: core-concepts/runtimes.md
+      - Runtime Adapters: core-concepts/runtime-adapters.md
+      - Task Runs: core-concepts/task-runs.md
+      - Approvals: core-concepts/approvals.md
+      - Git Worktrees: core-concepts/git-worktrees.md
+      - Events and Logs: core-concepts/events-and-logs.md
+      - Telemetry: core-concepts/telemetry.md
+      - Audit Trails: core-concepts/audit-trails.md
+  - Architecture:
+      - Architecture Overview: architecture/architecture-overview.md
+      - Spring Boot Orchestrator: architecture/spring-boot-orchestrator.md
+      - Next.js Console: architecture/nextjs-console.md
+      - Go Daemon Runner: architecture/go-daemon-runner.md
+      - Postgres Data Model: architecture/postgres-data-model.md
+      - Event Pipeline: architecture/event-pipeline.md
+      - WebSocket and SSE Streaming: architecture/websocket-sse-streaming.md
+      - Remote Runner Architecture: architecture/remote-runner-architecture.md
+      - Runtime Adapter Architecture: architecture/runtime-adapter-architecture.md
+      - Security Architecture: architecture/security-architecture.md
+      - Integration Layer: architecture/integration-layer.md
+  - Task Workflow:
+      - Manual Task Creation: task-workflow/manual-task-creation.md
+      - Repo and Agent Selection: task-workflow/repo-agent-selection.md
+      - Runner and Runtime Selection: task-workflow/runner-runtime-selection.md
+      - Task Refinement: task-workflow/task-refinement.md
+      - Execution Lifecycle: task-workflow/execution-lifecycle.md
+      - Build, Test, and Lint Validation: task-workflow/build-test-lint-validation.md
+      - Changed Files and Diff: task-workflow/changed-files-and-diff.md
+      - Human Approval Flow: task-workflow/human-approval-flow.md
+      - Commit, Push, and PR Flow: task-workflow/commit-push-pr-flow.md
+      - Failure and Recovery: task-workflow/failure-recovery.md
+  - Daemon and Runners:
+      - Daemon Overview: daemon-and-runners/daemon-overview.md
+      - Installing Daemon: daemon-and-runners/installing-daemon.md
+      - Registering Runner: daemon-and-runners/registering-runner.md
+      - Runner Heartbeat: daemon-and-runners/runner-heartbeat.md
+      - Runner Queue: daemon-and-runners/runner-queue.md
+      - Runner Security: daemon-and-runners/runner-security.md
+      - Runner Telemetry: daemon-and-runners/runner-telemetry.md
+      - Remote Runners: daemon-and-runners/remote-runners.md
+      - Home Machine Runner: daemon-and-runners/home-machine-runner.md
+      - Office Runner: daemon-and-runners/office-runner.md
+      - Cloud VM Runner: daemon-and-runners/cloud-vm-runner.md
+      - GPU Server Runner: daemon-and-runners/gpu-server-runner.md
+      - Runner Troubleshooting: daemon-and-runners/runner-troubleshooting.md
+  - Runtimes:
+      - Runtimes: runtimes/runtimes.md
+  - Runtime Adapters:
+      - Runtime Adapters Overview: runtime-adapters/runtime-adapters-overview.md
+      - Claude Code Runtime: runtime-adapters/claude-code-runtime.md
+      - Cursor CLI Runtime: runtime-adapters/cursor-cli-runtime.md
+      - Codex CLI Runtime: runtime-adapters/codex-cli-runtime.md
+      - OpenCode Ollama Runtime: runtime-adapters/opencode-ollama-runtime.md
+      - Raw Ollama API Runtime: runtime-adapters/raw-ollama-api-runtime.md
+      - Runtime Detection: runtime-adapters/runtime-detection.md
+      - Runtime Auth Status: runtime-adapters/runtime-auth-status.md
+      - Runtime Fallback Rules: runtime-adapters/runtime-fallback-rules.md
+      - Creating Custom Runtime Adapter: runtime-adapters/creating-custom-runtime-adapter.md
+      - Runtime Troubleshooting: runtime-adapters/runtime-troubleshooting.md
+  - Agents:
+      - Agents: agents/agents.md
+      - Trey Lead Agent: agents/trey-lead-agent.md
+      - Backend Agent: agents/backend-agent.md
+      - Frontend Agent: agents/frontend-agent.md
+      - Mobile Agent: agents/mobile-agent.md
+      - PR Review Agent: agents/pr-review-agent.md
+      - DevOps Agent: agents/devops-agent.md
+      - Docs Agent: agents/docs-agent.md
+      - Integration Agent: agents/integration-agent.md
+      - Creating Custom Agents: agents/creating-custom-agents.md
+      - Agent Repository Permissions: agents/agent-repo-permissions.md
+      - Agent Prompt Guidelines: agents/agent-prompt-guidelines.md
+  - Console UI:
+      - Console Overview: console-ui/console-overview.md
+      - Platform Console: console-ui/platform-console.md
+      - Dashboard: console-ui/dashboard.md
+      - Task Board: console-ui/task-board.md
+      - Task Detail: console-ui/task-detail.md
+      - Run Console: console-ui/run-console.md
+      - Live Agent Terminal: console-ui/live-agent-terminal.md
+      - Daemon Log Tail: console-ui/daemon-log-tail.md
+      - System Monitor: console-ui/system-monitor.md
+      - Runtime Status Panel: console-ui/runtime-status-panel.md
+      - Runner Selector: console-ui/runner-selector.md
+      - Diff Proposal Card: console-ui/diff-proposal-card.md
+      - Approval Center: console-ui/approval-center.md
+      - Pull Request View: console-ui/pull-request-view.md
+      - Integrations Screen: console-ui/integrations-screen.md
+      - Deployments Screen: console-ui/deployments-screen.md
+  - Safety and Governance:
+      - Safety Model: safety-and-governance/safety-model.md
+      - Approval Gates: safety-and-governance/approval-gates.md
+      - Command Allowlist: safety-and-governance/command-allowlist.md
+      - Protected Paths: safety-and-governance/protected-paths.md
+      - Secret Scanning: safety-and-governance/secret-scanning.md
+      - No Direct Main Edits: safety-and-governance/no-direct-main-edits.md
+      - Token Isolation: safety-and-governance/token-isolation.md
+      - Active Sessions: safety-and-governance/active-sessions.md
+      - Audit Logging: safety-and-governance/audit-logging.md
+      - External Status Safety: safety-and-governance/external-status-safety.md
+      - Production Deployment Safety: safety-and-governance/production-deployment-safety.md
+      - Security Best Practices: safety-and-governance/security-best-practices.md
+  - Integrations:
+      - Integrations Overview: integrations/integrations-overview.md
+      - GitHub Integration: integrations/github-integration.md
+      - GitHub Issues Import: integrations/github-issues-import.md
+      - GitHub Projects Sync: integrations/github-projects-sync.md
+      - GitHub PR Creation: integrations/github-pr-creation.md
+      - GitHub Status Comments: integrations/github-status-comments.md
+      - Jira Import: integrations/jira-import.md
+      - Jira Status Sync: integrations/jira-status-sync.md
+      - External Work Items: integrations/external-work-items.md
+      - Polling vs Webhooks: integrations/polling-vs-webhooks.md
+      - Integration Audit Logs: integrations/integration-audit-logs.md
+  - Use Cases:
+      - Solo Founder Workflow: use-cases/solo-founder-workflow.md
+      - Small Team Workflow: use-cases/small-team-workflow.md
+      - Multi-Repo Feature Workflow: use-cases/multi-repo-feature-workflow.md
+      - PR Review Workflow: use-cases/pr-review-workflow.md
+      - Remote Home Runner Workflow: use-cases/remote-home-runner-workflow.md
+      - Backend Spring Boot Workflow: use-cases/backend-spring-boot-workflow.md
+      - Frontend Next.js Workflow: use-cases/frontend-nextjs-workflow.md
+      - Mobile Workflow: use-cases/mobile-workflow.md
+      - DevOps Deployment Workflow: use-cases/devops-deployment-workflow.md
+      - Agency Workflow: use-cases/agency-workflow.md
+  - Product Roadmap:
+      - Roadmap Overview: product-roadmap/roadmap-overview.md
+      - Phase 1 Manual Task MVP: product-roadmap/phase-1-manual-task-mvp.md
+      - Phase 1.2 Runtime Adapters: product-roadmap/phase-1-2-runtime-adapters.md
+      - Phase 1.4 Remote Runners: product-roadmap/phase-1-4-remote-runners.md
+      - Phase 1.5 GitHub Import: product-roadmap/phase-1-5-github-import.md
+      - Phase 2 GitHub Project Sync: product-roadmap/phase-2-github-project-sync.md
+      - Phase 2.5 Jira Import: product-roadmap/phase-2-5-jira-import.md
+      - Phase 3 Jira Sync: product-roadmap/phase-3-jira-sync.md
+      - Phase 5 Deployment Assistant: product-roadmap/phase-5-deployment-assistant.md
+      - Product Editions: product-roadmap/product-editions.md
+      - Self-Hosted Enterprise: product-roadmap/self-hosted-enterprise.md
+  - Troubleshooting:
+      - Troubleshooting Overview: troubleshooting/troubleshooting-overview.md
+      - Daemon Not Connected: troubleshooting/daemon-not-connected.md
+      - Runtime Not Detected: troubleshooting/runtime-not-detected.md
+      - Auth Required: troubleshooting/auth-required.md
+      - Runner Offline: troubleshooting/runner-offline.md
+      - Log Not Streaming: troubleshooting/logs-not-streaming.md
+      - Build Failed: troubleshooting/build-failed.md
+      - Tests Failed: troubleshooting/tests-failed.md
+      - Diff Not Generated: troubleshooting/diff-not-generated.md
+      - Approval Blocked: troubleshooting/approval-blocked.md
+      - PR Creation Failed: troubleshooting/pr-creation-failed.md
+      - GitHub Sync Failed: troubleshooting/github-sync-failed.md
+      - Jira Sync Failed: troubleshooting/jira-sync-failed.md
